@@ -1,8 +1,10 @@
-name: ML Run the DIY3 running py file
+name: ML Run the vode_5 folder in master
 
 on:
   
   push:
+    branches:
+      - master     
 
 jobs:
   ml_run:
