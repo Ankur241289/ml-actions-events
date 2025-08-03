@@ -1,0 +1,30 @@
+name: ML Run the DIY3 running py file
+
+on:
+  
+  push:
+
+jobs:
+  ml_run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: | #Pipe is written to allow running multiline commands
+          python -m pip install --upgrade pip
+          pip install scikit-learn numpy pandas
+
+      - name: Run Python script
+        run: |
+          python ml_example.py
+
+
+
+
